@@ -1,0 +1,1523 @@
+nohup: ignoring input
+Arguments:
+Namespace(adapt=True, device='cuda:0', device_mid=None, device_out='cuda:0', eval_per_epoch=2, exp_pool_path='artifacts/exp_pools/exp_pool.pkl', fixed_order=False, gamma=1.0, grad_accum_steps=32, lr=0.0001, model_dir=None, num_epochs=80, plm_size='base', plm_type='llama', rank=128, sample_step=None, save_checkpoint_per_epoch=2, scale=1000, seed=100003, state_feature_dim=256, target_return_scale=1.0, test=False, trace='fcc-test', trace_num=100, video='video1', w=20, warmup_steps=2000, weight_decay=0.0001, which_layer=-1)
+Loading traces from data/traces/test/fcc-test/
+Experience dataset info:
+{'max_action': 5,
+ 'max_return': 0.04661987504979122,
+ 'max_reward': 4.3,
+ 'max_timestep': 46,
+ 'min_action': 0,
+ 'min_return': 0.0006304750495579298,
+ 'min_reward': -85.0127377757031,
+ 'min_timestep': 0}
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:03<00:03,  3.36s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:04<00:00,  2.02s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:04<00:00,  2.23s/it]normalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+
+The new embeddings will be initialized from a multivariate normal distribution that has old embeddings' mean and covariance. As described in this article: https://nlp.stanford.edu/~johnhew/vocab-expansion.html. To disable this, use `mean_resizing=False`
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`...
+/home/gth/miniconda3/envs/abr_netllm/lib/python3.8/site-packages/torch/_dynamo/eval_frame.py:600: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.4 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+The attention layers in this model are transitioning from computing the RoPE embeddings internally through `position_ids` (2D tensor with the indexes of the tokens), to using externally computed `position_embeddings` (Tuple of tensors, containing cos and sin). In v4.46 `position_ids` will be removed and `position_embeddings` will be mandatory.
+If tokenizer is loaded:  [1, 22172, 3186] 
+
+pad token is None, set to id 32000
+Step 0 - mean train loss  2.007818
+Step 100 - mean train loss  2.249517
+Step 200 - mean train loss  2.224537
+Step 300 - mean train loss  2.216888
+Step 400 - mean train loss  2.255702
+Step 500 - mean train loss  2.262829
+Step 600 - mean train loss  2.270813
+Step 700 - mean train loss  2.263435
+Step 800 - mean train loss  2.255213
+Step 900 - mean train loss  2.248853
+==================== Training Iteration #0 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 981.2412948608398,
+ 'training/train_loss_mean': 2.250616046439213,
+ 'training/train_loss_std': 0.42707513167611433}
+Checkpoint saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_checkpoint/0
+当前传入的 trace_num 值为: 100
+Best model saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_best_model
+>>>>>>>>>> Evaluation Information
+{'best_return': 3.4678383775388046,
+ 'episodes_len': 4700,
+ 'episodes_return': 3.4678383775388046,
+ 'time/evaluation': 1156.1887528896332}
+Step 0 - mean train loss  2.481339
+Step 100 - mean train loss  2.218575
+Step 200 - mean train loss  2.205545
+Step 300 - mean train loss  2.211618
+Step 400 - mean train loss  2.198975
+Step 500 - mean train loss  2.189833
+Step 600 - mean train loss  2.172269
+Step 700 - mean train loss  2.162748
+Step 800 - mean train loss  2.159054
+Step 900 - mean train loss  2.160399
+==================== Training Iteration #1 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 652.3510429859161,
+ 'training/train_loss_mean': 2.1566850574141045,
+ 'training/train_loss_std': 0.3708180762548235}
+Step 0 - mean train loss  1.882449
+Step 100 - mean train loss  2.069762
+Step 200 - mean train loss  2.058631
+Step 300 - mean train loss  2.044228
+Step 400 - mean train loss  2.031060
+Step 500 - mean train loss  2.021741
+Step 600 - mean train loss  2.012574
+Step 700 - mean train loss  2.005169
+Step 800 - mean train loss  2.000749
+Step 900 - mean train loss  1.991976
+==================== Training Iteration #2 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 652.6729125976562,
+ 'training/train_loss_mean': 1.9800688545387912,
+ 'training/train_loss_std': 0.2756759644777736}
+Checkpoint saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_checkpoint/2
+当前传入的 trace_num 值为: 100
+Best model saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_best_model
+>>>>>>>>>> Evaluation Information
+{'best_return': 3.7054345492731824,
+ 'episodes_len': 4700,
+ 'episodes_return': 3.7054345492731824,
+ 'time/evaluation': 1205.9148304462433}
+Step 0 - mean train loss  1.767923
+Step 100 - mean train loss  1.848168
+Step 200 - mean train loss  1.824360
+Step 300 - mean train loss  1.812008
+Step 400 - mean train loss  1.802665
+Step 500 - mean train loss  1.792760
+Step 600 - mean train loss  1.782763
+Step 700 - mean train loss  1.772319
+Step 800 - mean train loss  1.757347
+Step 900 - mean train loss  1.749681
+==================== Training Iteration #3 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 731.5135796070099,
+ 'training/train_loss_mean': 1.74300507943793,
+ 'training/train_loss_std': 0.22955698546867268}
+Step 0 - mean train loss  1.622307
+Step 100 - mean train loss  1.621491
+Step 200 - mean train loss  1.629166
+Step 300 - mean train loss  1.618395
+Step 400 - mean train loss  1.614594
+Step 500 - mean train loss  1.598687
+Step 600 - mean train loss  1.594280
+Step 700 - mean train loss  1.600402
+Step 800 - mean train loss  1.602833
+Step 900 - mean train loss  1.590838
+==================== Training Iteration #4 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 723.9327046871185,
+ 'training/train_loss_mean': 1.5917162062173866,
+ 'training/train_loss_std': 0.3909680915354725}
+Checkpoint saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_checkpoint/4
+当前传入的 trace_num 值为: 100
+Best model saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_best_model
+>>>>>>>>>> Evaluation Information
+{'best_return': 4.208097577326685,
+ 'episodes_len': 4700,
+ 'episodes_return': 4.208097577326685,
+ 'time/evaluation': 1144.5996580123901}
+Step 0 - mean train loss  0.952324
+Step 100 - mean train loss  1.549643
+Step 200 - mean train loss  1.531445
+Step 300 - mean train loss  1.506511
+Step 400 - mean train loss  1.517453
+Step 500 - mean train loss  1.526165
+Step 600 - mean train loss  1.540797
+Step 700 - mean train loss  1.543164
+Step 800 - mean train loss  1.529402
+Step 900 - mean train loss  1.527670
+==================== Training Iteration #5 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 655.1478679180145,
+ 'training/train_loss_mean': 1.5276296509197917,
+ 'training/train_loss_std': 0.5440801039357701}
+Step 0 - mean train loss  1.589362
+Step 100 - mean train loss  1.473649
+Step 200 - mean train loss  1.496606
+Step 300 - mean train loss  1.480361
+Step 400 - mean train loss  1.485671
+Step 500 - mean train loss  1.470260
+Step 600 - mean train loss  1.472352
+Step 700 - mean train loss  1.486661
+Step 800 - mean train loss  1.495878
+Step 900 - mean train loss  1.482024
+==================== Training Iteration #6 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 652.3377523422241,
+ 'training/train_loss_mean': 1.4861443293800793,
+ 'training/train_loss_std': 0.5536825855210824}
+Checkpoint saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_checkpoint/6
+当前传入的 trace_num 值为: 100
+Best model saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_best_model
+>>>>>>>>>> Evaluation Information
+{'best_return': 4.307765637821856,
+ 'episodes_len': 4700,
+ 'episodes_return': 4.307765637821856,
+ 'time/evaluation': 1139.958750963211}
+Step 0 - mean train loss  0.813437
+Step 100 - mean train loss  1.462164
+Step 200 - mean train loss  1.441507
+Step 300 - mean train loss  1.417961
+Step 400 - mean train loss  1.436839
+Step 500 - mean train loss  1.451189
+Step 600 - mean train loss  1.466603
+Step 700 - mean train loss  1.473180
+Step 800 - mean train loss  1.457825
+Step 900 - mean train loss  1.462698
+==================== Training Iteration #7 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 651.8736753463745,
+ 'training/train_loss_mean': 1.4626650528675582,
+ 'training/train_loss_std': 0.6206106281908021}
+Step 0 - mean train loss  1.554163
+Step 100 - mean train loss  1.415245
+Step 200 - mean train loss  1.430422
+Step 300 - mean train loss  1.405328
+Step 400 - mean train loss  1.417215
+Step 500 - mean train loss  1.400154
+Step 600 - mean train loss  1.404044
+Step 700 - mean train loss  1.421466
+Step 800 - mean train loss  1.433799
+Step 900 - mean train loss  1.417554
+==================== Training Iteration #8 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 652.1064603328705,
+ 'training/train_loss_mean': 1.4226312823743226,
+ 'training/train_loss_std': 0.5843989310791498}
+Checkpoint saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_checkpoint/8
+当前传入的 trace_num 值为: 100
+Best model saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_best_model
+>>>>>>>>>> Evaluation Information
+{'best_return': 4.312114267567872,
+ 'episodes_len': 4700,
+ 'episodes_return': 4.312114267567872,
+ 'time/evaluation': 1141.0273225307465}
+Step 0 - mean train loss  0.773229
+Step 100 - mean train loss  1.390327
+Step 200 - mean train loss  1.367821
+Step 300 - mean train loss  1.358923
+Step 400 - mean train loss  1.378582
+Step 500 - mean train loss  1.393868
+Step 600 - mean train loss  1.407487
+Step 700 - mean train loss  1.414883
+Step 800 - mean train loss  1.399386
+Step 900 - mean train loss  1.408247
+==================== Training Iteration #9 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 655.145804643631,
+ 'training/train_loss_mean': 1.408914072685931,
+ 'training/train_loss_std': 0.630262668090612}
+Step 0 - mean train loss  1.559941
+Step 100 - mean train loss  1.384461
+Step 200 - mean train loss  1.394209
+Step 300 - mean train loss  1.362964
+Step 400 - mean train loss  1.377828
+Step 500 - mean train loss  1.359160
+Step 600 - mean train loss  1.363100
+Step 700 - mean train loss  1.381732
+Step 800 - mean train loss  1.394399
+Step 900 - mean train loss  1.376609
+==================== Training Iteration #10 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 651.5719308853149,
+ 'training/train_loss_mean': 1.3835169824670597,
+ 'training/train_loss_std': 0.5976216275896084}
+Checkpoint saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_checkpoint/10
+当前传入的 trace_num 值为: 100
+Best model saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_best_model
+>>>>>>>>>> Evaluation Information
+{'best_return': 4.356722244820274,
+ 'episodes_len': 4700,
+ 'episodes_return': 4.356722244820274,
+ 'time/evaluation': 1143.5223712921143}
+Step 0 - mean train loss  0.747583
+Step 100 - mean train loss  1.347819
+Step 200 - mean train loss  1.328439
+Step 300 - mean train loss  1.321614
+Step 400 - mean train loss  1.339944
+Step 500 - mean train loss  1.361702
+Step 600 - mean train loss  1.375690
+Step 700 - mean train loss  1.382822
+Step 800 - mean train loss  1.367375
+Step 900 - mean train loss  1.378103
+==================== Training Iteration #11 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 654.6417207717896,
+ 'training/train_loss_mean': 1.3790104304960213,
+ 'training/train_loss_std': 0.6557199803734483}
+Step 0 - mean train loss  1.586263
+Step 100 - mean train loss  1.381980
+Step 200 - mean train loss  1.384018
+Step 300 - mean train loss  1.366143
+Step 400 - mean train loss  1.379567
+Step 500 - mean train loss  1.355518
+Step 600 - mean train loss  1.357741
+Step 700 - mean train loss  1.376462
+Step 800 - mean train loss  1.385741
+Step 900 - mean train loss  1.364999
+==================== Training Iteration #12 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 654.0000309944153,
+ 'training/train_loss_mean': 1.3705915632287422,
+ 'training/train_loss_std': 0.6457131726812535}
+Checkpoint saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_checkpoint/12
+当前传入的 trace_num 值为: 100
+Best model saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_best_model
+>>>>>>>>>> Evaluation Information
+{'best_return': 4.415445216254573,
+ 'episodes_len': 4700,
+ 'episodes_return': 4.415445216254573,
+ 'time/evaluation': 1146.6304240226746}
+Step 0 - mean train loss  0.707698
+Step 100 - mean train loss  1.321769
+Step 200 - mean train loss  1.312271
+Step 300 - mean train loss  1.306103
+Step 400 - mean train loss  1.323111
+Step 500 - mean train loss  1.350442
+Step 600 - mean train loss  1.367399
+Step 700 - mean train loss  1.368327
+Step 800 - mean train loss  1.352505
+Step 900 - mean train loss  1.362409
+==================== Training Iteration #13 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 653.1598250865936,
+ 'training/train_loss_mean': 1.3632182009129161,
+ 'training/train_loss_std': 0.7022225611320553}
+Step 0 - mean train loss  1.598839
+Step 100 - mean train loss  1.375579
+Step 200 - mean train loss  1.360398
+Step 300 - mean train loss  1.331088
+Step 400 - mean train loss  1.341091
+Step 500 - mean train loss  1.320622
+Step 600 - mean train loss  1.321785
+Step 700 - mean train loss  1.339018
+Step 800 - mean train loss  1.349617
+Step 900 - mean train loss  1.328523
+==================== Training Iteration #14 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 656.7673103809357,
+ 'training/train_loss_mean': 1.338048244800314,
+ 'training/train_loss_std': 0.6672984843310499}
+Checkpoint saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_checkpoint/14
+当前传入的 trace_num 值为: 100
+Best model saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_best_model
+>>>>>>>>>> Evaluation Information
+{'best_return': 4.4455801845348,
+ 'episodes_len': 4700,
+ 'episodes_return': 4.4455801845348,
+ 'time/evaluation': 1160.3198058605194}
+Step 0 - mean train loss  0.669411
+Step 100 - mean train loss  1.280008
+Step 200 - mean train loss  1.288393
+Step 300 - mean train loss  1.276197
+Step 400 - mean train loss  1.298652
+Step 500 - mean train loss  1.341841
+Step 600 - mean train loss  1.363553
+Step 700 - mean train loss  1.365337
+Step 800 - mean train loss  1.354766
+Step 900 - mean train loss  1.371961
+==================== Training Iteration #15 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 651.4079327583313,
+ 'training/train_loss_mean': 1.3739831717647462,
+ 'training/train_loss_std': 0.7799248705376051}
+Step 0 - mean train loss  1.540126
+Step 100 - mean train loss  1.399220
+Step 200 - mean train loss  1.366489
+Step 300 - mean train loss  1.338963
+Step 400 - mean train loss  1.347212
+Step 500 - mean train loss  1.324032
+Step 600 - mean train loss  1.323974
+Step 700 - mean train loss  1.338625
+Step 800 - mean train loss  1.346503
+Step 900 - mean train loss  1.324345
+==================== Training Iteration #16 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 651.7901442050934,
+ 'training/train_loss_mean': 1.3368334124485652,
+ 'training/train_loss_std': 0.755314124842215}
+Checkpoint saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_checkpoint/16
+当前传入的 trace_num 值为: 100
+Best model saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_best_model
+>>>>>>>>>> Evaluation Information
+{'best_return': 4.475442438748352,
+ 'episodes_len': 4700,
+ 'episodes_return': 4.475442438748352,
+ 'time/evaluation': 1235.7059326171875}
+Step 0 - mean train loss  0.662130
+Step 100 - mean train loss  1.274497
+Step 200 - mean train loss  1.293792
+Step 300 - mean train loss  1.282521
+Step 400 - mean train loss  1.310257
+Step 500 - mean train loss  1.363194
+Step 600 - mean train loss  1.393369
+Step 700 - mean train loss  1.396813
+Step 800 - mean train loss  1.386325
+Step 900 - mean train loss  1.399106
+==================== Training Iteration #17 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 1449.0382208824158,
+ 'training/train_loss_mean': 1.3929793171764138,
+ 'training/train_loss_std': 0.8792969140932028}
+Step 0 - mean train loss  1.380032
+Step 100 - mean train loss  1.331810
+Step 200 - mean train loss  1.313721
+Step 300 - mean train loss  1.296196
+Step 400 - mean train loss  1.307408
+Step 500 - mean train loss  1.290523
+Step 600 - mean train loss  1.296848
+Step 700 - mean train loss  1.310632
+Step 800 - mean train loss  1.320075
+Step 900 - mean train loss  1.299476
+==================== Training Iteration #18 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 1284.446962594986,
+ 'training/train_loss_mean': 1.3113421007792603,
+ 'training/train_loss_std': 0.7756447114410628}
+Checkpoint saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_checkpoint/18
+当前传入的 trace_num 值为: 100
+Best model saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_best_model
+>>>>>>>>>> Evaluation Information
+{'best_return': 4.487815425775296,
+ 'episodes_len': 4700,
+ 'episodes_return': 4.487815425775296,
+ 'time/evaluation': 2325.1420555114746}
+Step 0 - mean train loss  0.658059
+Step 100 - mean train loss  1.276892
+Step 200 - mean train loss  1.289793
+Step 300 - mean train loss  1.269119
+Step 400 - mean train loss  1.311865
+Step 500 - mean train loss  1.373229
+Step 600 - mean train loss  1.413952
+Step 700 - mean train loss  1.412213
+Step 800 - mean train loss  1.405026
+Step 900 - mean train loss  1.425822
+==================== Training Iteration #19 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 1238.0089733600616,
+ 'training/train_loss_mean': 1.419352424577866,
+ 'training/train_loss_std': 0.9519307727275204}
+Step 0 - mean train loss  1.437690
+Step 100 - mean train loss  1.278998
+Step 200 - mean train loss  1.283754
+Step 300 - mean train loss  1.277765
+Step 400 - mean train loss  1.293613
+Step 500 - mean train loss  1.285056
+Step 600 - mean train loss  1.287087
+Step 700 - mean train loss  1.297091
+Step 800 - mean train loss  1.307176
+Step 900 - mean train loss  1.291294
+==================== Training Iteration #20 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 1255.5681340694427,
+ 'training/train_loss_mean': 1.304529089413314,
+ 'training/train_loss_std': 0.8061592010523148}
+Checkpoint saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_checkpoint/20
+当前传入的 trace_num 值为: 100
+Best model saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_best_model
+>>>>>>>>>> Evaluation Information
+{'best_return': 4.494693720971334,
+ 'episodes_len': 4700,
+ 'episodes_return': 4.494693720971334,
+ 'time/evaluation': 2189.313581228256}
+Step 0 - mean train loss  0.645968
+Step 100 - mean train loss  1.302382
+Step 200 - mean train loss  1.303829
+Step 300 - mean train loss  1.273054
+Step 400 - mean train loss  1.307355
+Step 500 - mean train loss  1.378297
+Step 600 - mean train loss  1.430106
+Step 700 - mean train loss  1.420321
+Step 800 - mean train loss  1.417457
+Step 900 - mean train loss  1.444890
+==================== Training Iteration #21 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 1249.238094329834,
+ 'training/train_loss_mean': 1.4412974577348485,
+ 'training/train_loss_std': 0.9954390679350807}
+Step 0 - mean train loss  1.606065
+Step 100 - mean train loss  1.283943
+Step 200 - mean train loss  1.286497
+Step 300 - mean train loss  1.287870
+Step 400 - mean train loss  1.296203
+Step 500 - mean train loss  1.302798
+Step 600 - mean train loss  1.308257
+Step 700 - mean train loss  1.314924
+Step 800 - mean train loss  1.327118
+Step 900 - mean train loss  1.318313
+==================== Training Iteration #22 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 1235.0373108386993,
+ 'training/train_loss_mean': 1.3334141239593083,
+ 'training/train_loss_std': 0.8624784497891459}
+Checkpoint saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_checkpoint/22
+当前传入的 trace_num 值为: 100
+Best model saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_best_model
+>>>>>>>>>> Evaluation Information
+{'best_return': 4.498489129711987,
+ 'episodes_len': 4700,
+ 'episodes_return': 4.498489129711987,
+ 'time/evaluation': 2225.2284741401672}
+Step 0 - mean train loss  0.680587
+Step 100 - mean train loss  1.339229
+Step 200 - mean train loss  1.342267
+Step 300 - mean train loss  1.317286
+Step 400 - mean train loss  1.314336
+Step 500 - mean train loss  1.358968
+Step 600 - mean train loss  1.405575
+Step 700 - mean train loss  1.392925
+Step 800 - mean train loss  1.381664
+Step 900 - mean train loss  1.411689
+==================== Training Iteration #23 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 1198.4481871128082,
+ 'training/train_loss_mean': 1.4209980817135783,
+ 'training/train_loss_std': 0.9665379748188382}
+Step 0 - mean train loss  1.663875
+Step 100 - mean train loss  1.394868
+Step 200 - mean train loss  1.359666
+Step 300 - mean train loss  1.355602
+Step 400 - mean train loss  1.357627
+Step 500 - mean train loss  1.352994
+Step 600 - mean train loss  1.346743
+Step 700 - mean train loss  1.344786
+Step 800 - mean train loss  1.339290
+Step 900 - mean train loss  1.326608
+==================== Training Iteration #24 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 652.8090760707855,
+ 'training/train_loss_mean': 1.346812045985242,
+ 'training/train_loss_std': 0.9581726236636822}
+Checkpoint saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_checkpoint/24
+当前传入的 trace_num 值为: 100
+>>>>>>>>>> Evaluation Information
+{'best_return': 4.498489129711987,
+ 'episodes_len': 4700,
+ 'episodes_return': 4.495408032744591,
+ 'time/evaluation': 2290.2526841163635}
+Step 0 - mean train loss  0.635652
+Step 100 - mean train loss  1.318740
+Step 200 - mean train loss  1.311361
+Step 300 - mean train loss  1.270032
+Step 400 - mean train loss  1.275492
+Step 500 - mean train loss  1.295928
+Step 600 - mean train loss  1.327402
+Step 700 - mean train loss  1.319931
+Step 800 - mean train loss  1.312725
+Step 900 - mean train loss  1.341832
+==================== Training Iteration #25 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 1428.954121351242,
+ 'training/train_loss_mean': 1.35714781057112,
+ 'training/train_loss_std': 1.0000884419482723}
+Step 0 - mean train loss  1.516462
+Step 100 - mean train loss  1.386649
+Step 200 - mean train loss  1.330191
+Step 300 - mean train loss  1.313708
+Step 400 - mean train loss  1.325667
+Step 500 - mean train loss  1.349755
+Step 600 - mean train loss  1.346061
+Step 700 - mean train loss  1.346920
+Step 800 - mean train loss  1.337288
+Step 900 - mean train loss  1.312703
+==================== Training Iteration #26 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 1431.6692264080048,
+ 'training/train_loss_mean': 1.3237053102535012,
+ 'training/train_loss_std': 0.9188001252520432}
+Checkpoint saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_checkpoint/26
+当前传入的 trace_num 值为: 100
+>>>>>>>>>> Evaluation Information
+{'best_return': 4.498489129711987,
+ 'episodes_len': 4700,
+ 'episodes_return': 4.494808654075943,
+ 'time/evaluation': 2506.867465734482}
+Step 0 - mean train loss  0.567399
+Step 100 - mean train loss  1.288322
+Step 200 - mean train loss  1.283314
+Step 300 - mean train loss  1.237003
+Step 400 - mean train loss  1.243971
+Step 500 - mean train loss  1.257876
+Step 600 - mean train loss  1.279002
+Step 700 - mean train loss  1.267572
+Step 800 - mean train loss  1.269566
+Step 900 - mean train loss  1.302044
+==================== Training Iteration #27 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 1416.7027151584625,
+ 'training/train_loss_mean': 1.3087558352573585,
+ 'training/train_loss_std': 0.952682924255562}
+Step 0 - mean train loss  1.896346
+Step 100 - mean train loss  1.265302
+Step 200 - mean train loss  1.305658
+Step 300 - mean train loss  1.343649
+Step 400 - mean train loss  1.334141
+Step 500 - mean train loss  1.330214
+Step 600 - mean train loss  1.313967
+Step 700 - mean train loss  1.315319
+Step 800 - mean train loss  1.317846
+Step 900 - mean train loss  1.296119
+==================== Training Iteration #28 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 1407.3406963348389,
+ 'training/train_loss_mean': 1.3083457490189672,
+ 'training/train_loss_std': 0.8977476623587706}
+Checkpoint saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_checkpoint/28
+当前传入的 trace_num 值为: 100
+>>>>>>>>>> Evaluation Information
+{'best_return': 4.498489129711987,
+ 'episodes_len': 4700,
+ 'episodes_return': 4.495864359056581,
+ 'time/evaluation': 2517.5847775936127}
+Step 0 - mean train loss  0.652598
+Step 100 - mean train loss  1.307433
+Step 200 - mean train loss  1.300556
+Step 300 - mean train loss  1.246110
+Step 400 - mean train loss  1.288356
+Step 500 - mean train loss  1.359614
+Step 600 - mean train loss  1.384969
+Step 700 - mean train loss  1.354940
+Step 800 - mean train loss  1.355002
+Step 900 - mean train loss  1.390646
+==================== Training Iteration #29 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 1425.3097248077393,
+ 'training/train_loss_mean': 1.392383654535015,
+ 'training/train_loss_std': 0.9630383885902695}
+Step 0 - mean train loss  1.656486
+Step 100 - mean train loss  1.209874
+Step 200 - mean train loss  1.245936
+Step 300 - mean train loss  1.253595
+Step 400 - mean train loss  1.262932
+Step 500 - mean train loss  1.286511
+Step 600 - mean train loss  1.277874
+Step 700 - mean train loss  1.278292
+Step 800 - mean train loss  1.277444
+Step 900 - mean train loss  1.264894
+==================== Training Iteration #30 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 1408.5840113162994,
+ 'training/train_loss_mean': 1.2821110655650885,
+ 'training/train_loss_std': 0.8752326919225784}
+Checkpoint saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_checkpoint/30
+当前传入的 trace_num 值为: 100
+>>>>>>>>>> Evaluation Information
+{'best_return': 4.498489129711987,
+ 'episodes_len': 4700,
+ 'episodes_return': 4.4984057304041185,
+ 'time/evaluation': 2417.064432621002}
+Step 0 - mean train loss  0.586971
+Step 100 - mean train loss  1.208627
+Step 200 - mean train loss  1.201650
+Step 300 - mean train loss  1.172029
+Step 400 - mean train loss  1.187678
+Step 500 - mean train loss  1.222674
+Step 600 - mean train loss  1.241962
+Step 700 - mean train loss  1.233044
+Step 800 - mean train loss  1.232266
+Step 900 - mean train loss  1.285401
+==================== Training Iteration #31 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 656.6278088092804,
+ 'training/train_loss_mean': 1.313052870572337,
+ 'training/train_loss_std': 0.9120668906527906}
+Step 0 - mean train loss  1.844184
+Step 100 - mean train loss  1.389992
+Step 200 - mean train loss  1.353921
+Step 300 - mean train loss  1.350558
+Step 400 - mean train loss  1.330820
+Step 500 - mean train loss  1.356316
+Step 600 - mean train loss  1.346249
+Step 700 - mean train loss  1.363409
+Step 800 - mean train loss  1.379288
+Step 900 - mean train loss  1.368786
+==================== Training Iteration #32 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 656.5843510627747,
+ 'training/train_loss_mean': 1.3921909635614447,
+ 'training/train_loss_std': 1.058405114990462}
+Checkpoint saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_checkpoint/32
+当前传入的 trace_num 值为: 100
+Best model saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_best_model
+>>>>>>>>>> Evaluation Information
+{'best_return': 4.500829992114026,
+ 'episodes_len': 4700,
+ 'episodes_return': 4.500829992114026,
+ 'time/evaluation': 1151.0314733982086}
+Step 0 - mean train loss  0.729466
+Step 100 - mean train loss  1.301535
+Step 200 - mean train loss  1.259148
+Step 300 - mean train loss  1.217391
+Step 400 - mean train loss  1.203748
+Step 500 - mean train loss  1.214519
+Step 600 - mean train loss  1.222134
+Step 700 - mean train loss  1.216750
+Step 800 - mean train loss  1.227560
+Step 900 - mean train loss  1.275743
+==================== Training Iteration #33 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 657.383326292038,
+ 'training/train_loss_mean': 1.2839481469961893,
+ 'training/train_loss_std': 0.9086266341360463}
+Step 0 - mean train loss  2.590958
+Step 100 - mean train loss  1.285719
+Step 200 - mean train loss  1.338067
+Step 300 - mean train loss  1.339789
+Step 400 - mean train loss  1.321710
+Step 500 - mean train loss  1.337476
+Step 600 - mean train loss  1.320858
+Step 700 - mean train loss  1.334830
+Step 800 - mean train loss  1.351985
+Step 900 - mean train loss  1.352290
+==================== Training Iteration #34 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 657.4043853282928,
+ 'training/train_loss_mean': 1.3758583678922385,
+ 'training/train_loss_std': 1.0384030307773886}
+Checkpoint saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_checkpoint/34
+当前传入的 trace_num 值为: 100
+>>>>>>>>>> Evaluation Information
+{'best_return': 4.500829992114026,
+ 'episodes_len': 4700,
+ 'episodes_return': 4.4928490993368415,
+ 'time/evaluation': 1147.3938887119293}
+Step 0 - mean train loss  0.824018
+Step 100 - mean train loss  1.443069
+Step 200 - mean train loss  1.379857
+Step 300 - mean train loss  1.301292
+Step 400 - mean train loss  1.256653
+Step 500 - mean train loss  1.244916
+Step 600 - mean train loss  1.230569
+Step 700 - mean train loss  1.211626
+Step 800 - mean train loss  1.201251
+Step 900 - mean train loss  1.235780
+==================== Training Iteration #35 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 655.9961791038513,
+ 'training/train_loss_mean': 1.2829375082702212,
+ 'training/train_loss_std': 0.9478748017657742}
+Step 0 - mean train loss  2.352273
+Step 100 - mean train loss  1.684276
+Step 200 - mean train loss  1.497910
+Step 300 - mean train loss  1.471798
+Step 400 - mean train loss  1.426321
+Step 500 - mean train loss  1.443435
+Step 600 - mean train loss  1.439691
+Step 700 - mean train loss  1.458932
+Step 800 - mean train loss  1.467772
+Step 900 - mean train loss  1.455961
+==================== Training Iteration #36 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 655.7179443836212,
+ 'training/train_loss_mean': 1.4748945637097877,
+ 'training/train_loss_std': 1.1427171371162663}
+Checkpoint saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_checkpoint/36
+当前传入的 trace_num 值为: 100
+>>>>>>>>>> Evaluation Information
+{'best_return': 4.500829992114026,
+ 'episodes_len': 4700,
+ 'episodes_return': 4.483485453418504,
+ 'time/evaluation': 1144.776484966278}
+Step 0 - mean train loss  0.819392
+Step 100 - mean train loss  1.655851
+Step 200 - mean train loss  1.573335
+Step 300 - mean train loss  1.454235
+Step 400 - mean train loss  1.382866
+Step 500 - mean train loss  1.345772
+Step 600 - mean train loss  1.317814
+Step 700 - mean train loss  1.295931
+Step 800 - mean train loss  1.283399
+Step 900 - mean train loss  1.300559
+==================== Training Iteration #37 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 655.5848145484924,
+ 'training/train_loss_mean': 1.3186649680412308,
+ 'training/train_loss_std': 0.9790253751723849}
+Step 0 - mean train loss  2.408856
+Step 100 - mean train loss  1.612129
+Step 200 - mean train loss  1.454389
+Step 300 - mean train loss  1.445200
+Step 400 - mean train loss  1.417958
+Step 500 - mean train loss  1.447518
+Step 600 - mean train loss  1.437853
+Step 700 - mean train loss  1.486909
+Step 800 - mean train loss  1.509024
+Step 900 - mean train loss  1.497595
+==================== Training Iteration #38 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 655.4745025634766,
+ 'training/train_loss_mean': 1.5279241181570142,
+ 'training/train_loss_std': 1.1990088344001546}
+Checkpoint saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_checkpoint/38
+当前传入的 trace_num 值为: 100
+>>>>>>>>>> Evaluation Information
+{'best_return': 4.500829992114026,
+ 'episodes_len': 4700,
+ 'episodes_return': 4.492839966836442,
+ 'time/evaluation': 1144.731924533844}
+Step 0 - mean train loss  0.682602
+Step 100 - mean train loss  1.574608
+Step 200 - mean train loss  1.528839
+Step 300 - mean train loss  1.466523
+Step 400 - mean train loss  1.423376
+Step 500 - mean train loss  1.400737
+Step 600 - mean train loss  1.366636
+Step 700 - mean train loss  1.329705
+Step 800 - mean train loss  1.310377
+Step 900 - mean train loss  1.304699
+==================== Training Iteration #39 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 655.7621099948883,
+ 'training/train_loss_mean': 1.2984799003419298,
+ 'training/train_loss_std': 0.9936261376960196}
+Step 0 - mean train loss  1.947652
+Step 100 - mean train loss  1.493532
+Step 200 - mean train loss  1.390025
+Step 300 - mean train loss  1.383763
+Step 400 - mean train loss  1.348856
+Step 500 - mean train loss  1.359243
+Step 600 - mean train loss  1.351845
+Step 700 - mean train loss  1.381288
+Step 800 - mean train loss  1.412006
+Step 900 - mean train loss  1.402008
+==================== Training Iteration #40 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 655.5642228126526,
+ 'training/train_loss_mean': 1.440473675856766,
+ 'training/train_loss_std': 1.0773526409463088}
+Checkpoint saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_checkpoint/40
+当前传入的 trace_num 值为: 100
+>>>>>>>>>> Evaluation Information
+{'best_return': 4.500829992114026,
+ 'episodes_len': 4700,
+ 'episodes_return': 4.495339751484786,
+ 'time/evaluation': 1144.7599539756775}
+Step 0 - mean train loss  0.951476
+Step 100 - mean train loss  1.639276
+Step 200 - mean train loss  1.622339
+Step 300 - mean train loss  1.593760
+Step 400 - mean train loss  1.598061
+Step 500 - mean train loss  1.570750
+Step 600 - mean train loss  1.535522
+Step 700 - mean train loss  1.497907
+Step 800 - mean train loss  1.467445
+Step 900 - mean train loss  1.448664
+==================== Training Iteration #41 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 655.7164645195007,
+ 'training/train_loss_mean': 1.425844664088858,
+ 'training/train_loss_std': 1.1389500759553381}
+Step 0 - mean train loss  2.283370
+Step 100 - mean train loss  1.227101
+Step 200 - mean train loss  1.212375
+Step 300 - mean train loss  1.343192
+Step 400 - mean train loss  1.362824
+Step 500 - mean train loss  1.329659
+Step 600 - mean train loss  1.294686
+Step 700 - mean train loss  1.294601
+Step 800 - mean train loss  1.291223
+Step 900 - mean train loss  1.273047
+==================== Training Iteration #42 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 655.6715729236603,
+ 'training/train_loss_mean': 1.2865605578949744,
+ 'training/train_loss_std': 0.9561006409840179}
+Checkpoint saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_checkpoint/42
+当前传入的 trace_num 值为: 100
+>>>>>>>>>> Evaluation Information
+{'best_return': 4.500829992114026,
+ 'episodes_len': 4700,
+ 'episodes_return': 4.486339196330208,
+ 'time/evaluation': 1145.2461869716644}
+Step 0 - mean train loss  0.727660
+Step 100 - mean train loss  1.421213
+Step 200 - mean train loss  1.371216
+Step 300 - mean train loss  1.380291
+Step 400 - mean train loss  1.439532
+Step 500 - mean train loss  1.456879
+Step 600 - mean train loss  1.452020
+Step 700 - mean train loss  1.419911
+Step 800 - mean train loss  1.402753
+Step 900 - mean train loss  1.410120
+==================== Training Iteration #43 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 655.7509293556213,
+ 'training/train_loss_mean': 1.3849664224985188,
+ 'training/train_loss_std': 1.0706751496493963}
+Step 0 - mean train loss  1.281614
+Step 100 - mean train loss  1.092777
+Step 200 - mean train loss  1.083248
+Step 300 - mean train loss  1.083605
+Step 400 - mean train loss  1.075802
+Step 500 - mean train loss  1.079739
+Step 600 - mean train loss  1.075380
+Step 700 - mean train loss  1.097812
+Step 800 - mean train loss  1.094252
+Step 900 - mean train loss  1.089650
+==================== Training Iteration #44 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 655.2778782844543,
+ 'training/train_loss_mean': 1.1145826930317646,
+ 'training/train_loss_std': 0.7866737075329163}
+Checkpoint saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_checkpoint/44
+当前传入的 trace_num 值为: 100
+>>>>>>>>>> Evaluation Information
+{'best_return': 4.500829992114026,
+ 'episodes_len': 4700,
+ 'episodes_return': 4.499384956417494,
+ 'time/evaluation': 1142.8422570228577}
+Step 0 - mean train loss  0.745668
+Step 100 - mean train loss  1.260128
+Step 200 - mean train loss  1.208869
+Step 300 - mean train loss  1.203496
+Step 400 - mean train loss  1.252465
+Step 500 - mean train loss  1.288604
+Step 600 - mean train loss  1.305786
+Step 700 - mean train loss  1.296581
+Step 800 - mean train loss  1.296426
+Step 900 - mean train loss  1.325084
+==================== Training Iteration #45 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 654.6996433734894,
+ 'training/train_loss_mean': 1.321589827345615,
+ 'training/train_loss_std': 0.9969863226153906}
+Step 0 - mean train loss  1.615636
+Step 100 - mean train loss  1.285192
+Step 200 - mean train loss  1.266180
+Step 300 - mean train loss  1.241403
+Step 400 - mean train loss  1.206236
+Step 500 - mean train loss  1.197229
+Step 600 - mean train loss  1.182849
+Step 700 - mean train loss  1.187219
+Step 800 - mean train loss  1.177890
+Step 900 - mean train loss  1.167901
+==================== Training Iteration #46 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 654.7572379112244,
+ 'training/train_loss_mean': 1.1776202246729082,
+ 'training/train_loss_std': 0.8877470736303162}
+Checkpoint saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_checkpoint/46
+当前传入的 trace_num 值为: 100
+Best model saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_best_model
+>>>>>>>>>> Evaluation Information
+{'best_return': 4.503289643115959,
+ 'episodes_len': 4700,
+ 'episodes_return': 4.503289643115959,
+ 'time/evaluation': 1143.7227909564972}
+Step 0 - mean train loss  0.725165
+Step 100 - mean train loss  1.203351
+Step 200 - mean train loss  1.216113
+Step 300 - mean train loss  1.227723
+Step 400 - mean train loss  1.260395
+Step 500 - mean train loss  1.246556
+Step 600 - mean train loss  1.263621
+Step 700 - mean train loss  1.258261
+Step 800 - mean train loss  1.260010
+Step 900 - mean train loss  1.287020
+==================== Training Iteration #47 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 655.0433671474457,
+ 'training/train_loss_mean': 1.2864702554322858,
+ 'training/train_loss_std': 1.0031416549128769}
+Step 0 - mean train loss  2.221467
+Step 100 - mean train loss  1.371435
+Step 200 - mean train loss  1.324807
+Step 300 - mean train loss  1.319702
+Step 400 - mean train loss  1.268298
+Step 500 - mean train loss  1.250552
+Step 600 - mean train loss  1.230123
+Step 700 - mean train loss  1.249082
+Step 800 - mean train loss  1.245214
+Step 900 - mean train loss  1.236973
+==================== Training Iteration #48 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 654.9903948307037,
+ 'training/train_loss_mean': 1.2421744242778932,
+ 'training/train_loss_std': 1.0129398672294105}
+Checkpoint saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_checkpoint/48
+当前传入的 trace_num 值为: 100
+>>>>>>>>>> Evaluation Information
+{'best_return': 4.503289643115959,
+ 'episodes_len': 4700,
+ 'episodes_return': 4.492272112489068,
+ 'time/evaluation': 1144.4456367492676}
+Step 0 - mean train loss  0.853294
+Step 100 - mean train loss  1.325076
+Step 200 - mean train loss  1.304421
+Step 300 - mean train loss  1.282096
+Step 400 - mean train loss  1.301113
+Step 500 - mean train loss  1.296676
+Step 600 - mean train loss  1.295829
+Step 700 - mean train loss  1.297485
+Step 800 - mean train loss  1.306823
+Step 900 - mean train loss  1.326961
+==================== Training Iteration #49 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 654.9623355865479,
+ 'training/train_loss_mean': 1.3212785086229615,
+ 'training/train_loss_std': 1.0472898568315436}
+Step 0 - mean train loss  2.176861
+Step 100 - mean train loss  1.384293
+Step 200 - mean train loss  1.343225
+Step 300 - mean train loss  1.307766
+Step 400 - mean train loss  1.273361
+Step 500 - mean train loss  1.240535
+Step 600 - mean train loss  1.208141
+Step 700 - mean train loss  1.224075
+Step 800 - mean train loss  1.224830
+Step 900 - mean train loss  1.210071
+==================== Training Iteration #50 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 655.5376977920532,
+ 'training/train_loss_mean': 1.223635692492715,
+ 'training/train_loss_std': 0.9705580183757222}
+Checkpoint saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_checkpoint/50
+当前传入的 trace_num 值为: 100
+Best model saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_best_model
+>>>>>>>>>> Evaluation Information
+{'best_return': 4.509914325398301,
+ 'episodes_len': 4700,
+ 'episodes_return': 4.509914325398301,
+ 'time/evaluation': 1145.2137229442596}
+Step 0 - mean train loss  1.089861
+Step 100 - mean train loss  1.366340
+Step 200 - mean train loss  1.366149
+Step 300 - mean train loss  1.362429
+Step 400 - mean train loss  1.413607
+Step 500 - mean train loss  1.405479
+Step 600 - mean train loss  1.375903
+Step 700 - mean train loss  1.360084
+Step 800 - mean train loss  1.364564
+Step 900 - mean train loss  1.391210
+==================== Training Iteration #51 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 655.7924053668976,
+ 'training/train_loss_mean': 1.379603643200232,
+ 'training/train_loss_std': 1.1264023038736848}
+Step 0 - mean train loss  2.740716
+Step 100 - mean train loss  1.487343
+Step 200 - mean train loss  1.550189
+Step 300 - mean train loss  1.579646
+Step 400 - mean train loss  1.507193
+Step 500 - mean train loss  1.479089
+Step 600 - mean train loss  1.431256
+Step 700 - mean train loss  1.411116
+Step 800 - mean train loss  1.392615
+Step 900 - mean train loss  1.355653
+==================== Training Iteration #52 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 655.9286739826202,
+ 'training/train_loss_mean': 1.355131298171877,
+ 'training/train_loss_std': 1.101356004534487}
+Checkpoint saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_checkpoint/52
+当前传入的 trace_num 值为: 100
+>>>>>>>>>> Evaluation Information
+{'best_return': 4.509914325398301,
+ 'episodes_len': 4700,
+ 'episodes_return': 4.497820367144429,
+ 'time/evaluation': 1145.05286860466}
+Step 0 - mean train loss  0.889264
+Step 100 - mean train loss  1.269877
+Step 200 - mean train loss  1.243773
+Step 300 - mean train loss  1.219482
+Step 400 - mean train loss  1.260813
+Step 500 - mean train loss  1.264016
+Step 600 - mean train loss  1.261185
+Step 700 - mean train loss  1.261135
+Step 800 - mean train loss  1.269016
+Step 900 - mean train loss  1.294220
+==================== Training Iteration #53 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 655.83296251297,
+ 'training/train_loss_mean': 1.2885505644726765,
+ 'training/train_loss_std': 0.9869346739335435}
+Step 0 - mean train loss  2.070523
+Step 100 - mean train loss  1.531649
+Step 200 - mean train loss  1.669733
+Step 300 - mean train loss  1.695696
+Step 400 - mean train loss  1.621792
+Step 500 - mean train loss  1.580436
+Step 600 - mean train loss  1.521418
+Step 700 - mean train loss  1.552367
+Step 800 - mean train loss  1.552465
+Step 900 - mean train loss  1.505214
+==================== Training Iteration #54 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 657.2030398845673,
+ 'training/train_loss_mean': 1.4856047398226004,
+ 'training/train_loss_std': 1.1877042243035953}
+Checkpoint saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_checkpoint/54
+当前传入的 trace_num 值为: 100
+>>>>>>>>>> Evaluation Information
+{'best_return': 4.509914325398301,
+ 'episodes_len': 4700,
+ 'episodes_return': 4.509838077195223,
+ 'time/evaluation': 1189.545333147049}
+Step 0 - mean train loss  0.765098
+Step 100 - mean train loss  1.142114
+Step 200 - mean train loss  1.170156
+Step 300 - mean train loss  1.195428
+Step 400 - mean train loss  1.215952
+Step 500 - mean train loss  1.229808
+Step 600 - mean train loss  1.229428
+Step 700 - mean train loss  1.231699
+Step 800 - mean train loss  1.248990
+Step 900 - mean train loss  1.286795
+==================== Training Iteration #55 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 682.3034529685974,
+ 'training/train_loss_mean': 1.2825254165976196,
+ 'training/train_loss_std': 0.9372200029131955}
+Step 0 - mean train loss  1.762728
+Step 100 - mean train loss  1.373422
+Step 200 - mean train loss  1.353663
+Step 300 - mean train loss  1.387982
+Step 400 - mean train loss  1.353667
+Step 500 - mean train loss  1.367622
+Step 600 - mean train loss  1.329159
+Step 700 - mean train loss  1.338716
+Step 800 - mean train loss  1.378199
+Step 900 - mean train loss  1.368062
+==================== Training Iteration #56 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 655.9429605007172,
+ 'training/train_loss_mean': 1.3500123288346317,
+ 'training/train_loss_std': 1.0577457167375637}
+Checkpoint saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_checkpoint/56
+当前传入的 trace_num 值为: 100
+>>>>>>>>>> Evaluation Information
+{'best_return': 4.509914325398301,
+ 'episodes_len': 4700,
+ 'episodes_return': 4.509286850545823,
+ 'time/evaluation': 1145.0887422561646}
+Step 0 - mean train loss  0.839338
+Step 100 - mean train loss  1.266516
+Step 200 - mean train loss  1.258607
+Step 300 - mean train loss  1.240084
+Step 400 - mean train loss  1.238811
+Step 500 - mean train loss  1.243432
+Step 600 - mean train loss  1.246029
+Step 700 - mean train loss  1.238767
+Step 800 - mean train loss  1.235830
+Step 900 - mean train loss  1.286308
+==================== Training Iteration #57 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 655.9521777629852,
+ 'training/train_loss_mean': 1.3055693074716275,
+ 'training/train_loss_std': 1.016908935261566}
+Step 0 - mean train loss  3.360118
+Step 100 - mean train loss  1.316521
+Step 200 - mean train loss  1.333885
+Step 300 - mean train loss  1.382180
+Step 400 - mean train loss  1.377463
+Step 500 - mean train loss  1.391901
+Step 600 - mean train loss  1.354913
+Step 700 - mean train loss  1.363153
+Step 800 - mean train loss  1.383791
+Step 900 - mean train loss  1.390363
+==================== Training Iteration #58 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 658.0400016307831,
+ 'training/train_loss_mean': 1.4039692452103651,
+ 'training/train_loss_std': 1.1048823559771166}
+Checkpoint saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_checkpoint/58
+当前传入的 trace_num 值为: 100
+>>>>>>>>>> Evaluation Information
+{'best_return': 4.509914325398301,
+ 'episodes_len': 4700,
+ 'episodes_return': 4.5038101441152865,
+ 'time/evaluation': 1144.6173515319824}
+Step 0 - mean train loss  1.094351
+Step 100 - mean train loss  1.341950
+Step 200 - mean train loss  1.396787
+Step 300 - mean train loss  1.340516
+Step 400 - mean train loss  1.324626
+Step 500 - mean train loss  1.277828
+Step 600 - mean train loss  1.259068
+Step 700 - mean train loss  1.238241
+Step 800 - mean train loss  1.236722
+Step 900 - mean train loss  1.260233
+==================== Training Iteration #59 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 660.0007617473602,
+ 'training/train_loss_mean': 1.2711050217637154,
+ 'training/train_loss_std': 1.017327344657132}
+Step 0 - mean train loss  2.738631
+Step 100 - mean train loss  1.480829
+Step 200 - mean train loss  1.398108
+Step 300 - mean train loss  1.384538
+Step 400 - mean train loss  1.430382
+Step 500 - mean train loss  1.477551
+Step 600 - mean train loss  1.447001
+Step 700 - mean train loss  1.455237
+Step 800 - mean train loss  1.478287
+Step 900 - mean train loss  1.461460
+==================== Training Iteration #60 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 660.2636914253235,
+ 'training/train_loss_mean': 1.4536731531663871,
+ 'training/train_loss_std': 1.2009782706335905}
+Checkpoint saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_checkpoint/60
+当前传入的 trace_num 值为: 100
+>>>>>>>>>> Evaluation Information
+{'best_return': 4.509914325398301,
+ 'episodes_len': 4700,
+ 'episodes_return': 4.505658826720192,
+ 'time/evaluation': 1180.9389443397522}
+Step 0 - mean train loss  0.978155
+Step 100 - mean train loss  1.304972
+Step 200 - mean train loss  1.291143
+Step 300 - mean train loss  1.223656
+Step 400 - mean train loss  1.223717
+Step 500 - mean train loss  1.215953
+Step 600 - mean train loss  1.229382
+Step 700 - mean train loss  1.228431
+Step 800 - mean train loss  1.220712
+Step 900 - mean train loss  1.230778
+==================== Training Iteration #61 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 662.5863270759583,
+ 'training/train_loss_mean': 1.2350441396338576,
+ 'training/train_loss_std': 1.0573249260764297}
+Step 0 - mean train loss  2.602607
+Step 100 - mean train loss  1.294442
+Step 200 - mean train loss  1.264986
+Step 300 - mean train loss  1.257756
+Step 400 - mean train loss  1.244615
+Step 500 - mean train loss  1.280083
+Step 600 - mean train loss  1.261606
+Step 700 - mean train loss  1.283931
+Step 800 - mean train loss  1.342749
+Step 900 - mean train loss  1.360848
+==================== Training Iteration #62 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 1171.7254614830017,
+ 'training/train_loss_mean': 1.3683962172139634,
+ 'training/train_loss_std': 1.132139714453972}
+Checkpoint saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_checkpoint/62
+当前传入的 trace_num 值为: 100
+>>>>>>>>>> Evaluation Information
+{'best_return': 4.509914325398301,
+ 'episodes_len': 4700,
+ 'episodes_return': 4.500670053783238,
+ 'time/evaluation': 2519.217208623886}
+Step 0 - mean train loss  1.013889
+Step 100 - mean train loss  1.368360
+Step 200 - mean train loss  1.269011
+Step 300 - mean train loss  1.192939
+Step 400 - mean train loss  1.201319
+Step 500 - mean train loss  1.199721
+Step 600 - mean train loss  1.204940
+Step 700 - mean train loss  1.197540
+Step 800 - mean train loss  1.197852
+Step 900 - mean train loss  1.219162
+==================== Training Iteration #63 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 1392.2561645507812,
+ 'training/train_loss_mean': 1.224118719114298,
+ 'training/train_loss_std': 1.0117585846986559}
+Step 0 - mean train loss  2.182312
+Step 100 - mean train loss  1.287686
+Step 200 - mean train loss  1.279347
+Step 300 - mean train loss  1.292457
+Step 400 - mean train loss  1.273496
+Step 500 - mean train loss  1.281652
+Step 600 - mean train loss  1.265263
+Step 700 - mean train loss  1.277256
+Step 800 - mean train loss  1.325910
+Step 900 - mean train loss  1.342028
+==================== Training Iteration #64 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 1434.7889771461487,
+ 'training/train_loss_mean': 1.362303789546808,
+ 'training/train_loss_std': 1.0890757908084956}
+Checkpoint saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_checkpoint/64
+当前传入的 trace_num 值为: 100
+>>>>>>>>>> Evaluation Information
+{'best_return': 4.509914325398301,
+ 'episodes_len': 4700,
+ 'episodes_return': 4.499904845393659,
+ 'time/evaluation': 2496.800651550293}
+Step 0 - mean train loss  1.092597
+Step 100 - mean train loss  1.464611
+Step 200 - mean train loss  1.438314
+Step 300 - mean train loss  1.367263
+Step 400 - mean train loss  1.344818
+Step 500 - mean train loss  1.314130
+Step 600 - mean train loss  1.289596
+Step 700 - mean train loss  1.267525
+Step 800 - mean train loss  1.258730
+Step 900 - mean train loss  1.265872
+==================== Training Iteration #65 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 1359.738003730774,
+ 'training/train_loss_mean': 1.265858012963051,
+ 'training/train_loss_std': 1.080140315971523}
+Step 0 - mean train loss  1.973782
+Step 100 - mean train loss  1.367707
+Step 200 - mean train loss  1.406990
+Step 300 - mean train loss  1.335406
+Step 400 - mean train loss  1.314268
+Step 500 - mean train loss  1.297700
+Step 600 - mean train loss  1.282133
+Step 700 - mean train loss  1.296557
+Step 800 - mean train loss  1.298323
+Step 900 - mean train loss  1.295807
+==================== Training Iteration #66 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 1427.7129514217377,
+ 'training/train_loss_mean': 1.347183820828419,
+ 'training/train_loss_std': 1.0903914145652722}
+Checkpoint saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_checkpoint/66
+当前传入的 trace_num 值为: 100
+>>>>>>>>>> Evaluation Information
+{'best_return': 4.509914325398301,
+ 'episodes_len': 4700,
+ 'episodes_return': 4.500043860629443,
+ 'time/evaluation': 2504.6118047237396}
+Step 0 - mean train loss  1.457068
+Step 100 - mean train loss  1.608935
+Step 200 - mean train loss  1.443646
+Step 300 - mean train loss  1.465290
+Step 400 - mean train loss  1.523166
+Step 500 - mean train loss  1.458640
+Step 600 - mean train loss  1.410488
+Step 700 - mean train loss  1.380042
+Step 800 - mean train loss  1.370367
+Step 900 - mean train loss  1.378246
+==================== Training Iteration #67 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 1422.8389191627502,
+ 'training/train_loss_mean': 1.3504176908948768,
+ 'training/train_loss_std': 1.162686557459866}
+Step 0 - mean train loss  1.573150
+Step 100 - mean train loss  1.244683
+Step 200 - mean train loss  1.323886
+Step 300 - mean train loss  1.309942
+Step 400 - mean train loss  1.304934
+Step 500 - mean train loss  1.282120
+Step 600 - mean train loss  1.256094
+Step 700 - mean train loss  1.256367
+Step 800 - mean train loss  1.261626
+Step 900 - mean train loss  1.253661
+==================== Training Iteration #68 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 1431.1129086017609,
+ 'training/train_loss_mean': 1.2608485815129766,
+ 'training/train_loss_std': 0.9799039934770265}
+Checkpoint saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_checkpoint/68
+当前传入的 trace_num 值为: 100
+>>>>>>>>>> Evaluation Information
+{'best_return': 4.509914325398301,
+ 'episodes_len': 4700,
+ 'episodes_return': 4.483581051514986,
+ 'time/evaluation': 1913.8792653083801}
+Step 0 - mean train loss  1.616837
+Step 100 - mean train loss  1.425082
+Step 200 - mean train loss  1.351194
+Step 300 - mean train loss  1.276631
+Step 400 - mean train loss  1.326633
+Step 500 - mean train loss  1.305707
+Step 600 - mean train loss  1.290977
+Step 700 - mean train loss  1.257316
+Step 800 - mean train loss  1.232709
+Step 900 - mean train loss  1.234711
+==================== Training Iteration #69 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 653.5704364776611,
+ 'training/train_loss_mean': 1.2215502473795001,
+ 'training/train_loss_std': 1.0482918251316407}
+Step 0 - mean train loss  2.212879
+Step 100 - mean train loss  1.140107
+Step 200 - mean train loss  1.151700
+Step 300 - mean train loss  1.158695
+Step 400 - mean train loss  1.152091
+Step 500 - mean train loss  1.143096
+Step 600 - mean train loss  1.128902
+Step 700 - mean train loss  1.153484
+Step 800 - mean train loss  1.166469
+Step 900 - mean train loss  1.163319
+==================== Training Iteration #70 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 650.712753534317,
+ 'training/train_loss_mean': 1.1827477187911295,
+ 'training/train_loss_std': 0.9740086930706974}
+Checkpoint saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_checkpoint/70
+当前传入的 trace_num 值为: 100
+>>>>>>>>>> Evaluation Information
+{'best_return': 4.509914325398301,
+ 'episodes_len': 4700,
+ 'episodes_return': 4.506069948209588,
+ 'time/evaluation': 1140.5518109798431}
+Step 0 - mean train loss  1.499272
+Step 100 - mean train loss  1.321123
+Step 200 - mean train loss  1.275399
+Step 300 - mean train loss  1.231728
+Step 400 - mean train loss  1.274209
+Step 500 - mean train loss  1.286098
+Step 600 - mean train loss  1.281089
+Step 700 - mean train loss  1.284421
+Step 800 - mean train loss  1.281218
+Step 900 - mean train loss  1.284017
+==================== Training Iteration #71 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 650.0641648769379,
+ 'training/train_loss_mean': 1.26826575583272,
+ 'training/train_loss_std': 1.0969669462780056}
+Step 0 - mean train loss  2.141992
+Step 100 - mean train loss  1.262083
+Step 200 - mean train loss  1.280404
+Step 300 - mean train loss  1.230425
+Step 400 - mean train loss  1.219992
+Step 500 - mean train loss  1.190492
+Step 600 - mean train loss  1.175089
+Step 700 - mean train loss  1.189565
+Step 800 - mean train loss  1.210762
+Step 900 - mean train loss  1.205221
+==================== Training Iteration #72 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 654.3510823249817,
+ 'training/train_loss_mean': 1.2166058138156886,
+ 'training/train_loss_std': 1.0330171788972582}
+Checkpoint saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_checkpoint/72
+当前传入的 trace_num 值为: 100
+>>>>>>>>>> Evaluation Information
+{'best_return': 4.509914325398301,
+ 'episodes_len': 4700,
+ 'episodes_return': 4.509849906636651,
+ 'time/evaluation': 1137.3918521404266}
+Step 0 - mean train loss  1.202833
+Step 100 - mean train loss  1.409816
+Step 200 - mean train loss  1.298035
+Step 300 - mean train loss  1.230190
+Step 400 - mean train loss  1.273204
+Step 500 - mean train loss  1.269519
+Step 600 - mean train loss  1.284651
+Step 700 - mean train loss  1.270119
+Step 800 - mean train loss  1.261409
+Step 900 - mean train loss  1.284128
+==================== Training Iteration #73 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 653.7688436508179,
+ 'training/train_loss_mean': 1.2777354170257496,
+ 'training/train_loss_std': 1.1007291651108784}
+Step 0 - mean train loss  2.649058
+Step 100 - mean train loss  1.186562
+Step 200 - mean train loss  1.305542
+Step 300 - mean train loss  1.272408
+Step 400 - mean train loss  1.235837
+Step 500 - mean train loss  1.208765
+Step 600 - mean train loss  1.171436
+Step 700 - mean train loss  1.181969
+Step 800 - mean train loss  1.185735
+Step 900 - mean train loss  1.179753
+==================== Training Iteration #74 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 650.5386283397675,
+ 'training/train_loss_mean': 1.173969075131041,
+ 'training/train_loss_std': 1.0032546908036295}
+Checkpoint saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_checkpoint/74
+当前传入的 trace_num 值为: 100
+Best model saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_best_model
+>>>>>>>>>> Evaluation Information
+{'best_return': 4.510314667794101,
+ 'episodes_len': 4700,
+ 'episodes_return': 4.510314667794101,
+ 'time/evaluation': 1139.2880749702454}
+Step 0 - mean train loss  1.450345
+Step 100 - mean train loss  1.444868
+Step 200 - mean train loss  1.338537
+Step 300 - mean train loss  1.276793
+Step 400 - mean train loss  1.311926
+Step 500 - mean train loss  1.289052
+Step 600 - mean train loss  1.285322
+Step 700 - mean train loss  1.277404
+Step 800 - mean train loss  1.263532
+Step 900 - mean train loss  1.283097
+==================== Training Iteration #75 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 651.0383815765381,
+ 'training/train_loss_mean': 1.2760674936232745,
+ 'training/train_loss_std': 1.1228857831731833}
+Step 0 - mean train loss  3.036121
+Step 100 - mean train loss  1.230590
+Step 200 - mean train loss  1.246389
+Step 300 - mean train loss  1.225906
+Step 400 - mean train loss  1.222089
+Step 500 - mean train loss  1.205473
+Step 600 - mean train loss  1.181162
+Step 700 - mean train loss  1.205957
+Step 800 - mean train loss  1.215470
+Step 900 - mean train loss  1.217997
+==================== Training Iteration #76 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 651.5701305866241,
+ 'training/train_loss_mean': 1.209951311034402,
+ 'training/train_loss_std': 1.0334017912268298}
+Checkpoint saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_checkpoint/76
+当前传入的 trace_num 值为: 100
+>>>>>>>>>> Evaluation Information
+{'best_return': 4.510314667794101,
+ 'episodes_len': 4700,
+ 'episodes_return': 4.485709644547576,
+ 'time/evaluation': 1138.4631776809692}
+Step 0 - mean train loss  1.087613
+Step 100 - mean train loss  1.401698
+Step 200 - mean train loss  1.306975
+Step 300 - mean train loss  1.255023
+Step 400 - mean train loss  1.279112
+Step 500 - mean train loss  1.236249
+Step 600 - mean train loss  1.231151
+Step 700 - mean train loss  1.225587
+Step 800 - mean train loss  1.215595
+Step 900 - mean train loss  1.235759
+==================== Training Iteration #77 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 649.779824256897,
+ 'training/train_loss_mean': 1.235993057169633,
+ 'training/train_loss_std': 1.113436233810931}
+Step 0 - mean train loss  3.144295
+Step 100 - mean train loss  1.307771
+Step 200 - mean train loss  1.290344
+Step 300 - mean train loss  1.247924
+Step 400 - mean train loss  1.219311
+Step 500 - mean train loss  1.203758
+Step 600 - mean train loss  1.173084
+Step 700 - mean train loss  1.189862
+Step 800 - mean train loss  1.196898
+Step 900 - mean train loss  1.190617
+==================== Training Iteration #78 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 651.0609381198883,
+ 'training/train_loss_mean': 1.1904944633309618,
+ 'training/train_loss_std': 1.039138924657695}
+Checkpoint saved at: data/ft_plms/llama_base/artifacts_exp_pools_ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_80_seed_100003/early_stop_-1_checkpoint/78
+当前传入的 trace_num 值为: 100
+>>>>>>>>>> Evaluation Information
+{'best_return': 4.510314667794101,
+ 'episodes_len': 4700,
+ 'episodes_return': 4.507452545924412,
+ 'time/evaluation': 1136.9689078330994}
+Step 0 - mean train loss  1.088960
+Step 100 - mean train loss  1.392530
+Step 200 - mean train loss  1.315185
+Step 300 - mean train loss  1.242140
+Step 400 - mean train loss  1.261990
+Step 500 - mean train loss  1.220305
+Step 600 - mean train loss  1.212039
+Step 700 - mean train loss  1.199259
+Step 800 - mean train loss  1.181824
+Step 900 - mean train loss  1.198081
+==================== Training Iteration #79 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 654.3244497776031,
+ 'training/train_loss_mean': 1.2038179381244012,
+ 'training/train_loss_std': 1.101570703171379}
+/home/gth/miniconda3/envs/abr_netllm/lib/python3.8/site-packages/torch/utils/checkpoint.py:295: FutureWarning: `torch.cpu.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cpu', args...)` instead.
+  with torch.enable_grad(), device_autocast_ctx, torch.cpu.amp.autocast(**ctx.cpu_autocast_kwargs):  # type: ignore[attr-defined]
+/home/gth/miniconda3/envs/abr_netllm/lib/python3.8/site-packages/torch/utils/checkpoint.py:92: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
