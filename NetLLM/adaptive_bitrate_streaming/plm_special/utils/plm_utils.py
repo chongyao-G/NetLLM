@@ -146,7 +146,7 @@ def load_plm(model_name, model_path, specials_to_add = None, **kwargs):
         model_config.is_decoder = True
     if 'roberta' in model_name:  # add is_decoder=True for RoBERTa
         model_config.is_decoder = True
-
+    """
      # 定义4bit量化配置
     bnb_config = BitsAndBytesConfig(
         load_in_4bit=True,
@@ -154,14 +154,14 @@ def load_plm(model_name, model_path, specials_to_add = None, **kwargs):
         bnb_4bit_quant_type="nf4",
         bnb_4bit_compute_dtype=torch.float16
     )
-
+    """
     # model = model_class.model.from_pretrained(model_path)
     device_input_side = kwargs.pop('device_input_side', None)
     device_output_side = kwargs.pop('device_output_side', None)
     if 'llama' in model_name and device_input_side is not None and device_output_side is not None:
         device_middle_side = kwargs.pop('device_middle_side', None)
         device_map = create_device_map_for_llama(device_input_side, device_output_side, device_middle_side)
-        model = model_class.model.from_pretrained(model_path, config=model_config, device_map=device_map,quantization_config=bnb_config)
+        model = model_class.model.from_pretrained(model_path, config=model_config, device_map=device_map)
         #model = model_class.model.from_pretrained(model_path, config=model_config, device_map=device_map)
     else:
         model = model_class.model.from_pretrained(model_path, config=model_config)
