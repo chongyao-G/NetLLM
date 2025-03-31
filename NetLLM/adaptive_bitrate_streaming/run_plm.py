@@ -80,7 +80,7 @@ def adapt(args, model, exp_dataset, exp_dataset_info, eval_env_settings, checkpo
         lambda steps: min((steps + 1) / args.warmup_steps, 1)
     )
     loss_fn = CrossEntropyLoss()
-    trainer = Trainer(args, model=model, optimizer=optimizer, exp_dataset=exp_dataset, loss_fn=loss_fn, device=args.device, lr_scheduler=lr_scheduler, 
+    trainer = Trainer(args, model=model, optimizer=optimizer, exp_dataset=exp_dataset, loss_fn=loss_fn, device=args.device, batch_size=2, lr_scheduler=lr_scheduler, 
                       grad_accum_steps=args.grad_accum_steps)
 
     target_return = exp_dataset_info.max_return * args.target_return_scale
